@@ -3,41 +3,141 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>VerifHash (VSH)</title>
+  <title>VerifHash (VSH) – An independent Proof-of-Work cryptocurrency project</title>
+  <meta name="description" content="VerifHash (VSH) is an independent Proof-of-Work cryptocurrency project in open development." />
+  <meta name="theme-color" content="#0B110F" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2370E5A0' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 3 4.5 6v5.5c0 4.6 3.1 8.2 7.5 9.5 4.4-1.3 7.5-4.9 7.5-9.5V6L12 3Z'/%3E%3Cpath d='m9 12 2.2 2.2L15.5 10'/%3E%3C/svg%3E" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
+  <!-- Ikon perisai: didefinisikan sekali, dipakai di header dan hero -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="icon-shield" viewBox="0 0 24 24">
+      <path d="M12 3 4.5 6v5.5c0 4.6 3.1 8.2 7.5 9.5 4.4-1.3 7.5-4.9 7.5-9.5V6L12 3Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+      <path d="m9 12 2.2 2.2L15.5 10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+  </svg>
+
+  <!-- ===== HEADER ===== -->
   <header class="site-header">
-    <a href="#home">VerifHash <span>VSH</span></a>
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#roadmap">Roadmap</a>
-    </nav>
+    <div class="container header-inner">
+      <a class="brand" href="#home" aria-label="VerifHash, kembali ke Home">
+        <svg class="brand-icon" aria-hidden="true"><use href="#icon-shield"/></svg>
+        <span class="brand-name">VerifHash</span>
+        <span class="brand-ticker">VSH</span>
+      </a>
+      <nav class="nav" aria-label="Navigasi utama">
+        <a href="#home" data-nav="home">Home</a>
+        <a href="#roadmap" data-nav="roadmap">Roadmap</a>
+      </nav>
+    </div>
   </header>
 
   <main>
+
+    <!-- ===== HOME ===== -->
     <section id="home" class="hero">
-      <h1>VerifHash (VSH)</h1>
-      <p>An independent Proof-of-Work cryptocurrency project.</p>
-      <p class="slogan">Mine. Verify. Build Trust.</p>
+      <div class="container hero-inner">
+        <svg class="hero-icon" aria-hidden="true"><use href="#icon-shield"/></svg>
+        <h1>VerifHash (VSH)</h1>
+        <p class="hero-desc">An independent Proof-of-Work cryptocurrency project.</p>
+        <p class="hero-slogan">Mine. Verify. Build Trust.</p>
+      </div>
     </section>
 
-    <section id="roadmap">
-      <h2>Development Roadmap</h2>
-      <ol>
-        <li>Foundation</li>
-        <li>Source Code &amp; Fork</li>
-        <li>Core Configuration</li>
-        <li>Mining Test</li>
-        <li>Testnet</li>
-        <li>Mainnet Launch</li>
-      </ol>
+    <!-- ===== ROADMAP ===== -->
+    <section id="roadmap" class="roadmap">
+      <div class="container">
+        <header class="section-head">
+          <h2>Development Roadmap</h2>
+          <p>From the first idea to mainnet.</p>
+        </header>
+
+        <!-- Ubah status: data-status = "planned" | "in-progress" | "completed" -->
+        <ol class="steps">
+
+          <li class="step">
+            <span class="step-num" aria-hidden="true">01</span>
+            <div class="step-body">
+              <div class="step-top">
+                <h3>Foundation</h3>
+                <span class="status" data-status="planned"></span>
+              </div>
+              <p>Menentukan nama proyek, ticker, algoritma mining, tujuan proyek, dan aturan dasar koin.</p>
+            </div>
+          </li>
+
+          <li class="step">
+            <span class="step-num" aria-hidden="true">02</span>
+            <div class="step-body">
+              <div class="step-top">
+                <h3>Source Code &amp; Fork</h3>
+                <span class="status" data-status="planned"></span>
+              </div>
+              <p>Memilih source code dasar, melakukan fork repositori, menyesuaikan identitas proyek, dan melakukan build awal.</p>
+            </div>
+          </li>
+
+          <li class="step">
+            <span class="step-num" aria-hidden="true">03</span>
+            <div class="step-body">
+              <div class="step-top">
+                <h3>Core Configuration</h3>
+                <span class="status" data-status="planned"></span>
+              </div>
+              <p>Mengatur parameter konsensus, block time, block reward, halving, suplai maksimum, dan genesis block.</p>
+            </div>
+          </li>
+
+          <li class="step">
+            <span class="step-num" aria-hidden="true">04</span>
+            <div class="step-body">
+              <div class="step-top">
+                <h3>Mining Test</h3>
+                <span class="status" data-status="planned"></span>
+              </div>
+              <p>Menjalankan node, menguji proses mining, memverifikasi pembuatan blok, dan memastikan reward bekerja sesuai aturan.</p>
+            </div>
+          </li>
+
+          <li class="step">
+            <span class="step-num" aria-hidden="true">05</span>
+            <div class="step-body">
+              <div class="step-top">
+                <h3>Testnet</h3>
+                <span class="status" data-status="planned"></span>
+              </div>
+              <p>Menguji komunikasi antarnode, kestabilan jaringan, sinkronisasi blok, serta memperbaiki bug sebelum peluncuran.</p>
+            </div>
+          </li>
+
+          <li class="step">
+            <span class="step-num" aria-hidden="true">06</span>
+            <div class="step-body">
+              <div class="step-top">
+                <h3>Mainnet Launch</h3>
+                <span class="status" data-status="planned"></span>
+              </div>
+              <p>Meluncurkan jaringan utama setelah implementasi dan pengujian memenuhi kriteria kesiapan.</p>
+            </div>
+          </li>
+
+        </ol>
+      </div>
     </section>
+
   </main>
 
-  <footer>
-    <p>VerifHash · VSH · Open development</p>
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <p class="footer-brand">VerifHash · VSH</p>
+        <p class="footer-note">Open development · Built step by step</p>
+      </div>
+      <a class="footer-link" href="https://github.com/yun-nuonuo/verifhash" target="_blank" rel="noopener">GitHub</a>
+    </div>
   </footer>
 
   <script src="script.js"></script>
