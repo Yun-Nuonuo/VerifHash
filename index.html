@@ -46,80 +46,193 @@
       </div>
     </section>
 
-    <!-- ===== ROADMAP ===== -->
+        <!-- ===== ROADMAP ===== -->
     <section id="roadmap" class="roadmap">
       <div class="container">
         <header class="section-head">
           <h2>Development Roadmap</h2>
-          <p>From the first idea to mainnet.</p>
+          <p>Basis fork VerusCoin. Fondasi dahulu, testnet dan peluncuran belakangan.</p>
         </header>
 
-        <!-- Ubah status: data-status = "planned" | "in-progress" | "completed" -->
+        <!--
+          CARA UPDATE PROGRES:
+          1) Status fase: ganti data-status = "planned" | "in-progress" | "completed"
+          2) Sub-tugas selesai: ubah class="task" menjadi class="task is-done"
+        -->
         <ol class="steps">
 
+          <!-- FASE 1 -->
           <li class="step">
             <span class="step-num" aria-hidden="true">01</span>
             <div class="step-body">
               <div class="step-top">
-                <h3>Foundation</h3>
-                <span class="status" data-status="planned"></span>
+                <h3>Audit Source Code &amp; Batas Fork</h3>
+                <span class="status" data-status="in-progress"></span>
               </div>
-              <p>Menentukan nama proyek, ticker, algoritma mining, tujuan proyek, dan aturan dasar koin.</p>
+              <p>Memahami struktur proyek sebelum melakukan perubahan besar.</p>
+              <details class="tasks" open>
+                <summary>Sub-tugas</summary>
+                <ul>
+                  <li class="task is-done"><span class="task-id">1.1</span>Memetakan arsitektur dan komponen utama source code</li>
+                  <li class="task"><span class="task-id">1.2</span>Menentukan komponen yang dipertahankan, dimodifikasi, atau diganti</li>
+                  <li class="task"><span class="task-id">1.3</span>Meninjau seluruh perubahan yang sudah dilakukan</li>
+                  <li class="task"><span class="task-id">1.4</span>Memastikan proyek dapat di-build dari kondisi source yang terdokumentasi</li>
+                  <li class="task"><span class="task-id">1.5</span>Membuat baseline dan prosedur pemulihan jika perubahan gagal</li>
+                </ul>
+              </details>
+              <p class="criteria"><strong>Kriteria selesai:</strong> struktur source dipahami, perubahan terdokumentasi, dan baseline build berhasil.</p>
             </div>
           </li>
 
+          <!-- FASE 2 -->
           <li class="step">
             <span class="step-num" aria-hidden="true">02</span>
             <div class="step-body">
               <div class="step-top">
-                <h3>Source Code &amp; Fork</h3>
+                <h3>Identitas &amp; Pemisahan Chain</h3>
                 <span class="status" data-status="planned"></span>
               </div>
-              <p>Memilih source code dasar, melakukan fork repositori, menyesuaikan identitas proyek, dan melakukan build awal.</p>
+              <p>Memastikan koin baru memiliki identitas sendiri dan tidak tercampur dengan jaringan VerusCoin.</p>
+              <details class="tasks">
+                <summary>Sub-tugas</summary>
+                <ul>
+                  <li class="task"><span class="task-id">2.1</span>Menetapkan nama koin, ticker, dan identitas chain</li>
+                  <li class="task"><span class="task-id">2.2</span>Memeriksa prefix alamat dan format encoding</li>
+                  <li class="task"><span class="task-id">2.3</span>Menetapkan magic bytes jaringan serta port P2P dan RPC</li>
+                  <li class="task"><span class="task-id">2.4</span>Memeriksa coin type dan parameter wallet yang relevan</li>
+                  <li class="task"><span class="task-id">2.5</span>Memisahkan direktori data, konfigurasi, dan wallet</li>
+                  <li class="task"><span class="task-id">2.6</span>Mengaudit referensi identitas Verus yang masih tertanam</li>
+                  <li class="task"><span class="task-id">2.7</span>Memastikan mode mainnet, testnet, dan regtest tidak saling bertabrakan</li>
+                </ul>
+              </details>
+              <p class="criteria"><strong>Kriteria selesai:</strong> identitas chain konsisten dan data koin baru terisolasi dari jaringan asal.</p>
             </div>
           </li>
 
+          <!-- FASE 3 -->
           <li class="step">
             <span class="step-num" aria-hidden="true">03</span>
             <div class="step-body">
               <div class="step-top">
-                <h3>Core Configuration</h3>
+                <h3>Desain Konsensus &amp; Tokenomics</h3>
                 <span class="status" data-status="planned"></span>
               </div>
-              <p>Mengatur parameter konsensus, block time, block reward, halving, suplai maksimum, dan genesis block.</p>
+              <p>Menetapkan aturan dasar yang menentukan validitas blok dan emisi koin.</p>
+              <details class="tasks">
+                <summary>Sub-tugas</summary>
+                <ul>
+                  <li class="task"><span class="task-id">3.1</span>Menetapkan algoritma Proof of Work (PoW)</li>
+                  <li class="task"><span class="task-id">3.2</span>Menentukan target waktu blok (target desain: 150 detik)</li>
+                  <li class="task"><span class="task-id">3.3</span>Menentukan aturan penyesuaian difficulty</li>
+                  <li class="task"><span class="task-id">3.4</span>Menentukan reward awal (target desain: 50 koin per blok)</li>
+                  <li class="task"><span class="task-id">3.5</span>Menentukan interval halving (target desain: 420.000 blok)</li>
+                  <li class="task"><span class="task-id">3.6</span>Menghitung jadwal emisi dan estimasi suplai maksimum</li>
+                  <li class="task"><span class="task-id">3.7</span>Menentukan aturan pembulatan reward dan satuan terkecil koin</li>
+                  <li class="task"><span class="task-id">3.8</span>Menentukan validasi coinbase, reward, dan batas suplai</li>
+                  <li class="task"><span class="task-id">3.9</span>Memeriksa seluruh jalur kode yang menentukan reward dan suplai</li>
+                </ul>
+              </details>
+              <p class="criteria"><strong>Kriteria selesai:</strong> aturan konsensus dan emisi tertulis jelas, saling konsisten, dan dapat diuji. Target suplai sekitar 42 juta koin masih berupa target desain sampai terbukti melalui perhitungan dan pengujian.</p>
             </div>
           </li>
 
+          <!-- FASE 4 -->
           <li class="step">
             <span class="step-num" aria-hidden="true">04</span>
             <div class="step-body">
               <div class="step-top">
-                <h3>Mining Test</h3>
+                <h3>Genesis Block &amp; Parameter Jaringan</h3>
                 <span class="status" data-status="planned"></span>
               </div>
-              <p>Menjalankan node, menguji proses mining, memverifikasi pembuatan blok, dan memastikan reward bekerja sesuai aturan.</p>
+              <p>Membentuk titik awal blockchain yang sesuai dengan chain baru.</p>
+              <details class="tasks">
+                <summary>Sub-tugas</summary>
+                <ul>
+                  <li class="task"><span class="task-id">4.1</span>Menentukan parameter genesis block</li>
+                  <li class="task"><span class="task-id">4.2</span>Membuat genesis block berdasarkan aturan konsensus koin baru</li>
+                  <li class="task"><span class="task-id">4.3</span>Memverifikasi genesis hash dan merkle root</li>
+                  <li class="task"><span class="task-id">4.4</span>Memeriksa parameter jaringan dan identitas chain</li>
+                  <li class="task"><span class="task-id">4.5</span>Memastikan port, magic bytes, dan direktori data sudah sesuai</li>
+                  <li class="task"><span class="task-id">4.6</span>Memastikan node tidak memakai genesis atau konfigurasi jaringan asal secara tidak sengaja</li>
+                </ul>
+              </details>
+              <p class="criteria"><strong>Kriteria selesai:</strong> genesis dan parameter jaringan konsisten dengan aturan konsensus yang ditetapkan.</p>
             </div>
           </li>
 
+          <!-- FASE 5 -->
           <li class="step">
             <span class="step-num" aria-hidden="true">05</span>
             <div class="step-body">
               <div class="step-top">
-                <h3>Testnet</h3>
+                <h3>Regtest &amp; Pengujian Konsensus</h3>
                 <span class="status" data-status="planned"></span>
               </div>
-              <p>Menguji komunikasi antarnode, kestabilan jaringan, sinkronisasi blok, serta memperbaiki bug sebelum peluncuran.</p>
+              <p>Membuktikan aturan dasar bekerja secara lokal sebelum menjalankan testnet.</p>
+              <details class="tasks">
+                <summary>Sub-tugas</summary>
+                <ul>
+                  <li class="task"><span class="task-id">5.1</span>Menjalankan node dengan direktori data terpisah</li>
+                  <li class="task"><span class="task-id">5.2</span>Membuat blok secara lokal dan memeriksa tinggi blok</li>
+                  <li class="task"><span class="task-id">5.3</span>Menguji transaksi dan validasi blok</li>
+                  <li class="task"><span class="task-id">5.4</span>Menguji reward pada tinggi blok yang berbeda</li>
+                  <li class="task"><span class="task-id">5.5</span>Menguji perubahan reward tepat di batas halving</li>
+                  <li class="task"><span class="task-id">5.6</span>Menguji penolakan blok atau transaksi yang tidak valid</li>
+                  <li class="task"><span class="task-id">5.7</span>Menguji restart node dan pemuatan ulang blockchain</li>
+                  <li class="task"><span class="task-id">5.8</span>Memastikan regtest tidak mengubah data jaringan lain</li>
+                </ul>
+              </details>
+              <p class="criteria"><strong>Kriteria selesai:</strong> pengujian otomatis dan manual menunjukkan aturan konsensus berjalan sesuai desain.</p>
             </div>
           </li>
 
+          <!-- FASE 6 -->
           <li class="step">
             <span class="step-num" aria-hidden="true">06</span>
             <div class="step-body">
               <div class="step-top">
-                <h3>Mainnet Launch</h3>
+                <h3>Testnet Multi-Node</h3>
                 <span class="status" data-status="planned"></span>
               </div>
-              <p>Meluncurkan jaringan utama setelah implementasi dan pengujian memenuhi kriteria kesiapan.</p>
+              <p>Membuktikan beberapa node dapat beroperasi sebagai satu jaringan.</p>
+              <details class="tasks">
+                <summary>Sub-tugas</summary>
+                <ul>
+                  <li class="task"><span class="task-id">6.1</span>Menjalankan minimal dua node pada lingkungan terpisah</li>
+                  <li class="task"><span class="task-id">6.2</span>Menguji koneksi dan propagasi blok antar-node</li>
+                  <li class="task"><span class="task-id">6.3</span>Menguji propagasi transaksi</li>
+                  <li class="task"><span class="task-id">6.4</span>Memastikan node menyepakati chain yang valid</li>
+                  <li class="task"><span class="task-id">6.5</span>Menguji pemulihan koneksi dan sinkronisasi ulang</li>
+                  <li class="task"><span class="task-id">6.6</span>Memeriksa konflik konfigurasi dan pemisahan jaringan</li>
+                  <li class="task"><span class="task-id">6.7</span>Mendokumentasikan hasil pengujian dan bug yang ditemukan</li>
+                </ul>
+              </details>
+              <p class="criteria"><strong>Kriteria selesai:</strong> beberapa node dapat terhubung, menyinkronkan chain, dan memvalidasi blok dengan aturan yang sama.</p>
+            </div>
+          </li>
+
+          <!-- FASE 7 -->
+          <li class="step">
+            <span class="step-num" aria-hidden="true">07</span>
+            <div class="step-body">
+              <div class="step-top">
+                <h3>Audit &amp; Kesiapan Rilis</h3>
+                <span class="status" data-status="planned"></span>
+              </div>
+              <p>Memastikan implementasi layak dipertimbangkan untuk rilis publik.</p>
+              <details class="tasks">
+                <summary>Sub-tugas</summary>
+                <ul>
+                  <li class="task"><span class="task-id">7.1</span>Mengaudit validasi transaksi dan blok</li>
+                  <li class="task"><span class="task-id">7.2</span>Mengaudit reward, emisi, dan batas suplai</li>
+                  <li class="task"><span class="task-id">7.3</span>Memeriksa keamanan RPC dan konfigurasi node</li>
+                  <li class="task"><span class="task-id">7.4</span>Memeriksa wallet, backup, dan pemulihan data</li>
+                  <li class="task"><span class="task-id">7.5</span>Menyiapkan dokumentasi build dan instalasi node</li>
+                  <li class="task"><span class="task-id">7.6</span>Menyusun prosedur rilis dan pemantauan jaringan</li>
+                  <li class="task"><span class="task-id">7.7</span>Menyelesaikan bug kritis sebelum mempertimbangkan peluncuran</li>
+                </ul>
+              </details>
+              <p class="criteria"><strong>Kriteria selesai:</strong> tidak ada masalah kritis yang diketahui, pengujian terdokumentasi, dan prosedur operasional tersedia.</p>
             </div>
           </li>
 
