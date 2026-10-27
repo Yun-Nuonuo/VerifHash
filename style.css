@@ -136,3 +136,66 @@ a.footer-link:hover { text-decoration: underline; text-underline-offset: 4px; }
   html { scroll-behavior: auto; }
   * { transition: none !important; }
 }
+
+/* ---------- Sub-tugas roadmap ---------- */
+.step-body p.criteria {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px dashed var(--border);
+  font-size: 0.88rem;
+}
+.criteria strong { color: var(--text); font-weight: 600; }
+
+.tasks { margin-top: 14px; }
+.tasks summary {
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent);
+  list-style: none;
+  user-select: none;
+}
+.tasks summary::-webkit-details-marker { display: none; }
+.tasks summary::before { content: "▸ "; }
+.tasks[open] summary::before { content: "▾ "; }
+
+.tasks ul { list-style: none; margin: 10px 0 0; padding: 0; display: grid; gap: 8px; }
+
+.task {
+  position: relative;
+  padding-left: 26px;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+.task::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 5px;
+  width: 14px;
+  height: 14px;
+  border: 1.5px solid var(--border);
+  border-radius: 4px;
+}
+.task.is-done { color: var(--text); }
+.task.is-done::before {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+.task.is-done::after {
+  content: "✓";
+  position: absolute;
+  left: 2.5px;
+  top: 2px;
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: var(--bg);
+}
+.task-id {
+  display: inline-block;
+  min-width: 2.2em;
+  margin-right: 6px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--accent);
+}
