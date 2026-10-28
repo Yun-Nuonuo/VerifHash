@@ -46,7 +46,7 @@
       </div>
     </section>
 
-        <!-- ===== ROADMAP ===== -->
+            <!-- ===== ROADMAP ===== -->
     <section id="roadmap" class="roadmap">
       <div class="container">
         <header class="section-head">
@@ -56,7 +56,7 @@
 
         <!--
           CARA UPDATE PROGRES:
-          1) Status fase: ganti data-status = "planned" | "in-progress" | "completed"
+          1) Status fase: data-status = "planned" | "in-progress" | "completed"
           2) Sub-tugas selesai: ubah class="task" menjadi class="task is-done"
         -->
         <ol class="steps">
@@ -78,9 +78,12 @@
                   <li class="task"><span class="task-id">1.3</span>Meninjau seluruh perubahan yang sudah dilakukan</li>
                   <li class="task"><span class="task-id">1.4</span>Memastikan proyek dapat di-build dari kondisi source yang terdokumentasi</li>
                   <li class="task"><span class="task-id">1.5</span>Membuat baseline dan prosedur pemulihan jika perubahan gagal</li>
+                  <li class="task"><span class="task-id">1.6</span>Menjalankan test suite bawaan sebagai baseline sebelum ada perubahan konsensus</li>
+                  <li class="task"><span class="task-id">1.7</span>Memastikan kepatuhan lisensi dan atribusi source asal</li>
+                  <li class="task"><span class="task-id">1.8</span>Menetapkan kebijakan menyerap perbaikan keamanan dari upstream</li>
                 </ul>
               </details>
-              <p class="criteria"><strong>Kriteria selesai:</strong> struktur source dipahami, perubahan terdokumentasi, dan baseline build berhasil.</p>
+              <p class="criteria"><strong>Kriteria selesai:</strong> struktur source dipahami, perubahan terdokumentasi, baseline build dan test berhasil, serta batas fork dan kebijakan upstream jelas.</p>
             </div>
           </li>
 
@@ -121,15 +124,18 @@
               <details class="tasks">
                 <summary>Sub-tugas</summary>
                 <ul>
-                  <li class="task"><span class="task-id">3.1</span>Menetapkan algoritma Proof of Work (PoW)</li>
+                  <li class="task"><span class="task-id">3.1</span>Menetapkan algoritma Proof of Work (PoW) yang sudah teruji, tanpa kriptografi buatan sendiri</li>
                   <li class="task"><span class="task-id">3.2</span>Menentukan target waktu blok (target desain: 150 detik)</li>
-                  <li class="task"><span class="task-id">3.3</span>Menentukan aturan penyesuaian difficulty</li>
+                  <li class="task"><span class="task-id">3.3</span>Menentukan aturan penyesuaian difficulty yang tahan lonjakan dan penurunan hashrate</li>
                   <li class="task"><span class="task-id">3.4</span>Menentukan reward awal (target desain: 50 koin per blok)</li>
                   <li class="task"><span class="task-id">3.5</span>Menentukan interval halving (target desain: 420.000 blok)</li>
                   <li class="task"><span class="task-id">3.6</span>Menghitung jadwal emisi dan estimasi suplai maksimum</li>
                   <li class="task"><span class="task-id">3.7</span>Menentukan aturan pembulatan reward dan satuan terkecil koin</li>
                   <li class="task"><span class="task-id">3.8</span>Menentukan validasi coinbase, reward, dan batas suplai</li>
                   <li class="task"><span class="task-id">3.9</span>Memeriksa seluruh jalur kode yang menentukan reward dan suplai</li>
+                  <li class="task"><span class="task-id">3.10</span>Menentukan model peluncuran: fair launch, premine, atau dev fund</li>
+                  <li class="task"><span class="task-id">3.11</span>Memutuskan nasib mekanisme Proof of Stake bawaan (dipertahankan atau dinonaktifkan)</li>
+                  <li class="task"><span class="task-id">3.12</span>Memutuskan fitur bawaan lain yang dipertahankan atau dibuang (privasi, identitas, dan sebagainya)</li>
                 </ul>
               </details>
               <p class="criteria"><strong>Kriteria selesai:</strong> aturan konsensus dan emisi tertulis jelas, saling konsisten, dan dapat diuji. Target suplai sekitar 42 juta koin masih berupa target desain sampai terbukti melalui perhitungan dan pengujian.</p>
@@ -180,9 +186,11 @@
                   <li class="task"><span class="task-id">5.6</span>Menguji penolakan blok atau transaksi yang tidak valid</li>
                   <li class="task"><span class="task-id">5.7</span>Menguji restart node dan pemuatan ulang blockchain</li>
                   <li class="task"><span class="task-id">5.8</span>Memastikan regtest tidak mengubah data jaringan lain</li>
+                  <li class="task"><span class="task-id">5.9</span>Mensimulasikan reorganisasi chain dan percobaan double-spend</li>
+                  <li class="task"><span class="task-id">5.10</span>Melakukan fuzzing pada validasi blok dan transaksi</li>
                 </ul>
               </details>
-              <p class="criteria"><strong>Kriteria selesai:</strong> pengujian otomatis dan manual menunjukkan aturan konsensus berjalan sesuai desain.</p>
+              <p class="criteria"><strong>Kriteria selesai:</strong> pengujian otomatis dan manual menunjukkan aturan konsensus berjalan sesuai desain, termasuk saat diserang.</p>
             </div>
           </li>
 
@@ -205,6 +213,7 @@
                   <li class="task"><span class="task-id">6.5</span>Menguji pemulihan koneksi dan sinkronisasi ulang</li>
                   <li class="task"><span class="task-id">6.6</span>Memeriksa konflik konfigurasi dan pemisahan jaringan</li>
                   <li class="task"><span class="task-id">6.7</span>Mendokumentasikan hasil pengujian dan bug yang ditemukan</li>
+                  <li class="task"><span class="task-id">6.8</span>Menguji skenario fork dan reorganisasi antar-node</li>
                 </ul>
               </details>
               <p class="criteria"><strong>Kriteria selesai:</strong> beberapa node dapat terhubung, menyinkronkan chain, dan memvalidasi blok dengan aturan yang sama.</p>
@@ -230,9 +239,37 @@
                   <li class="task"><span class="task-id">7.5</span>Menyiapkan dokumentasi build dan instalasi node</li>
                   <li class="task"><span class="task-id">7.6</span>Menyusun prosedur rilis dan pemantauan jaringan</li>
                   <li class="task"><span class="task-id">7.7</span>Menyelesaikan bug kritis sebelum mempertimbangkan peluncuran</li>
+                  <li class="task"><span class="task-id">7.8</span>Meminta audit keamanan dari pihak ketiga yang independen</li>
+                  <li class="task"><span class="task-id">7.9</span>Membuka program pelaporan bug (bug bounty)</li>
+                  <li class="task"><span class="task-id">7.10</span>Menerbitkan rilis bertanda tangan, dengan checksum dan build yang dapat direproduksi</li>
+                  <li class="task"><span class="task-id">7.11</span>Berkonsultasi dengan ahli hukum mengenai regulasi koin publik</li>
                 </ul>
               </details>
-              <p class="criteria"><strong>Kriteria selesai:</strong> tidak ada masalah kritis yang diketahui, pengujian terdokumentasi, dan prosedur operasional tersedia.</p>
+              <p class="criteria"><strong>Kriteria selesai:</strong> tidak ada masalah kritis yang diketahui, hasil audit independen tersedia, pengujian terdokumentasi, dan prosedur operasional tersedia.</p>
+            </div>
+          </li>
+
+          <!-- FASE 8 -->
+          <li class="step">
+            <span class="step-num" aria-hidden="true">08</span>
+            <div class="step-body">
+              <div class="step-top">
+                <h3>Ekosistem &amp; Komunitas</h3>
+                <span class="status" data-status="planned"></span>
+              </div>
+              <p>Menyiapkan perangkat pendukung agar jaringan dapat tumbuh dan digunakan orang lain.</p>
+              <details class="tasks">
+                <summary>Sub-tugas</summary>
+                <ul>
+                  <li class="task"><span class="task-id">8.1</span>Menyiapkan seed node dan DNS seed</li>
+                  <li class="task"><span class="task-id">8.2</span>Membangun block explorer</li>
+                  <li class="task"><span class="task-id">8.3</span>Menyediakan wallet beserta panduan penggunaan</li>
+                  <li class="task"><span class="task-id">8.4</span>Menyiapkan software mining dan dukungan mining pool</li>
+                  <li class="task"><span class="task-id">8.5</span>Menerbitkan dokumentasi publik dan whitepaper</li>
+                  <li class="task"><span class="task-id">8.6</span>Membuka kanal komunitas dan prosedur pelaporan keamanan</li>
+                </ul>
+              </details>
+              <p class="criteria"><strong>Kriteria selesai:</strong> pengguna dapat menjalankan node, menambang, dan mengirim transaksi tanpa bantuan langsung dari tim inti.</p>
             </div>
           </li>
 
