@@ -1,17 +1,29 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>VerifHash (VSH) – An independent Proof-of-Work cryptocurrency project</title>
-  <meta name="description" content="VerifHash (VSH) is an independent Proof-of-Work cryptocurrency project in open development." />
+
+  <title>VerifHash (VSH) – Independent Hybrid PoW/PoS Blockchain</title>
+  <meta name="description" content="VerifHash (VSH) is an independent blockchain project with a hybrid Proof-of-Work and Proof-of-Stake consensus design, developed transparently step by step." />
   <meta name="theme-color" content="#0B110F" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="VerifHash (VSH) – Independent Hybrid PoW/PoS Blockchain" />
+  <meta property="og:description" content="An independent blockchain project built around a hybrid Proof-of-Work and Proof-of-Stake consensus design." />
+  <meta property="og:url" content="https://vsh.verifhash.workers.dev/" />
+  <meta name="twitter:card" content="summary" />
+
+  <link rel="canonical" href="https://vsh.verifhash.workers.dev/" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2370E5A0' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 3 4.5 6v5.5c0 4.6 3.1 8.2 7.5 9.5 4.4-1.3 7.5-4.9 7.5-9.5V6L12 3Z'/%3E%3Cpath d='m9 12 2.2 2.2L15.5 10'/%3E%3C/svg%3E" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- Ikon perisai: didefinisikan sekali, dipakai di header dan hero -->
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <!-- Reusable shield icon -->
   <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
     <symbol id="icon-shield" viewBox="0 0 24 24">
       <path d="M12 3 4.5 6v5.5c0 4.6 3.1 8.2 7.5 9.5 4.4-1.3 7.5-4.9 7.5-9.5V6L12 3Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
@@ -19,257 +31,477 @@
     </symbol>
   </svg>
 
-  <!-- ===== HEADER ===== -->
+  <!-- HEADER -->
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="#home" aria-label="VerifHash, kembali ke Home">
+      <a class="brand" href="#home" aria-label="VerifHash home">
         <svg class="brand-icon" aria-hidden="true"><use href="#icon-shield"/></svg>
         <span class="brand-name">VerifHash</span>
         <span class="brand-ticker">VSH</span>
       </a>
-      <nav class="nav" aria-label="Navigasi utama">
+
+      <nav class="nav" aria-label="Main navigation">
         <a href="#home" data-nav="home">Home</a>
+        <a href="#tokenomics" data-nav="tokenomics">Tokenomics</a>
         <a href="#roadmap" data-nav="roadmap">Roadmap</a>
       </nav>
     </div>
   </header>
 
-  <main>
+  <main id="main-content">
 
-    <!-- ===== HOME ===== -->
+    <!-- HOME / HERO -->
     <section id="home" class="hero">
       <div class="container hero-inner">
         <svg class="hero-icon" aria-hidden="true"><use href="#icon-shield"/></svg>
-        <h1>VerifHash (VSH)</h1>
-        <p class="hero-desc">An independent Proof-of-Work cryptocurrency project.</p>
+
+        <p class="eyebrow">INDEPENDENT BLOCKCHAIN PROJECT</p>
+        <h1>VerifHash <span>(VSH)</span></h1>
+
+        <p class="hero-desc">
+          An independent blockchain project with a hybrid
+          Proof-of-Work and Proof-of-Stake consensus design.
+        </p>
+
         <p class="hero-slogan">Mine. Verify. Build Trust.</p>
+
+        <div class="hero-tags" aria-label="Project characteristics">
+          <span>Hybrid PoW + PoS</span>
+          <span>Fair Launch Design</span>
+          <span>Open Development</span>
+        </div>
+
+        <a class="hero-cta" href="#roadmap">Explore Development Roadmap</a>
       </div>
     </section>
 
-            <!-- ===== ROADMAP ===== -->
+    <!-- PROJECT OVERVIEW -->
+    <section class="project-overview" aria-labelledby="overview-title">
+      <div class="container">
+        <header class="section-head">
+          <h2 id="overview-title">About VerifHash</h2>
+          <p>A blockchain project developed with transparency and verifiable progress.</p>
+        </header>
+
+        <div class="overview-card">
+          <p>
+            VerifHash (VSH) is an independent blockchain project based on
+            the VerusCoin codebase. It aims to establish its own network
+            identity, consensus parameters, and economic model.
+          </p>
+
+          <p>
+            Its planned consensus model combines Proof-of-Work (PoW) and
+            Proof-of-Stake (PoS), allowing both mechanisms to compete
+            in block production under the network's consensus rules.
+          </p>
+
+          <p>
+            The project is independently developed and is not affiliated
+            with, endorsed by, or officially supported by the VerusCoin team.
+          </p>
+
+          <p>
+            Development is ongoing. Design decisions, implementation,
+            and test results are treated as separate milestones.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TOKENOMICS -->
+    <section id="tokenomics" class="tokenomics">
+      <div class="container">
+        <header class="section-head">
+          <h2>Tokenomics</h2>
+          <p>Current target parameters. These remain subject to implementation and consensus testing.</p>
+        </header>
+
+        <div class="token-grid">
+          <article class="token-card">
+            <span class="token-label">Initial block reward</span>
+            <strong>25 <span>VSH</span></strong>
+          </article>
+
+          <article class="token-card">
+            <span class="token-label">Target block time</span>
+            <strong>150 <span>seconds</span></strong>
+          </article>
+
+          <article class="token-card">
+            <span class="token-label">Halving interval</span>
+            <strong>840,960 <span>blocks</span></strong>
+          </article>
+
+          <article class="token-card">
+            <span class="token-label">Decimal precision</span>
+            <strong>8 <span>decimals</span></strong>
+          </article>
+
+          <article class="token-card token-card-wide">
+            <span class="token-label">Estimated maximum supply</span>
+            <strong>42,048,000 <span>VSH</span></strong>
+            <small>
+              Theoretical estimate based on a 25 VSH initial reward and
+              successive halvings every 840,960 blocks. Final emission
+              behavior must be confirmed by implementation and testing.
+            </small>
+          </article>
+        </div>
+
+        <div class="consensus-card">
+          <div class="consensus-heading">
+            <span class="consensus-icon">⚖</span>
+            <h3>Hybrid PoW + PoS Consensus</h3>
+          </div>
+
+          <p>
+            VerifHash is designed around a hybrid consensus model in which
+            Proof-of-Work miners and Proof-of-Stake participants compete
+            to produce valid blocks. The exact implementation and security
+            behavior must be validated through testing before any mainnet launch.
+          </p>
+
+          <div class="consensus-types">
+            <div>
+              <strong>Proof-of-Work</strong>
+              <span>Mining-based block production</span>
+            </div>
+            <div>
+              <strong>Proof-of-Stake</strong>
+              <span>Stake-based block production</span>
+            </div>
+          </div>
+        </div>
+
+        <p class="disclaimer">
+          Tokenomics are design targets, not a guarantee of market value,
+          profitability, or final network behavior.
+        </p>
+      </div>
+    </section>
+
+    <!-- DEVELOPMENT STATUS -->
+    <section class="development-status" aria-labelledby="development-title">
+      <div class="container">
+        <header class="section-head">
+          <h2 id="development-title">Development Status</h2>
+          <p>Progress is reported according to what has actually been tested.</p>
+        </header>
+
+        <div class="status-card">
+          <div class="status-card-top">
+            <div>
+              <span class="status-kicker">CURRENT TESTING</span>
+              <h3>VSHTEST Initial Smoke Test</h3>
+            </div>
+            <span class="status" data-status="in-progress"></span>
+          </div>
+
+          <p>
+            The initial VSHTEST check successfully started the node,
+            retrieved network information, and returned the testnet
+            genesis block hash.
+          </p>
+
+          <ul class="evidence-list">
+            <li>Node startup: successful</li>
+            <li>VSHTEST network parameters: retrieved</li>
+            <li>Genesis block hash retrieval: successful</li>
+          </ul>
+
+          <p class="status-caution">
+            This is an initial smoke test only. It does not yet establish
+            successful mining, multi-node synchronization, complete network
+            isolation, or full consensus security.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ROADMAP -->
     <section id="roadmap" class="roadmap">
       <div class="container">
         <header class="section-head">
           <h2>Development Roadmap</h2>
-          <p>Basis fork VerusCoin. Fondasi dahulu, testnet dan peluncuran belakangan.</p>
+          <p>Built on the VerusCoin codebase. Foundation first, testing and launch later.</p>
         </header>
 
         <!--
-          CARA UPDATE PROGRES:
-          1) Status fase: data-status = "planned" | "in-progress" | "completed"
-          2) Sub-tugas selesai: ubah class="task" menjadi class="task is-done"
+          Progress guide:
+          Phase status: planned | in-progress | completed
+          Completed task: class="task is-done"
+          Do not mark a task complete until its result is verified.
         -->
+
         <ol class="steps">
 
-          <!-- FASE 1 -->
+          <!-- PHASE 1 -->
           <li class="step">
             <span class="step-num" aria-hidden="true">01</span>
             <div class="step-body">
               <div class="step-top">
-                <h3>Audit Source Code &amp; Batas Fork</h3>
-                <span class="status" data-status="completed"></span>
+                <h3>Source Code Audit &amp; Fork Boundaries</h3>
+                <span class="status" data-status="in-progress"></span>
               </div>
-              <p>Memahami struktur proyek sebelum melakukan perubahan besar.</p>
-              <details class="tasks" open>
-                <summary>Sub-tugas</summary>
+
+              <p>Understanding the project structure before making major changes.</p>
+
+              <details class="tasks">
+                <summary>Tasks</summary>
                 <ul>
-                  <li class="task is-done"><span class="task-id">1.1</span>Memetakan arsitektur dan komponen utama source code</li>
-                  <li class="task is-done"><span class="task-id">1.2</span>Menentukan komponen yang dipertahankan, dimodifikasi, atau diganti</li>
-                  <li class="task is-done"><span class="task-id">1.3</span>Meninjau seluruh perubahan yang sudah dilakukan</li>
-                  <li class="task is-done"><span class="task-id">1.4</span>Memastikan proyek dapat di-build dari kondisi source yang terdokumentasi</li>
-                  <li class="task is-done"><span class="task-id">1.5</span>Membuat baseline dan prosedur pemulihan jika perubahan gagal</li>
-                  <li class="task is-done"><span class="task-id">1.6</span>Menjalankan test suite bawaan sebagai baseline sebelum ada perubahan konsensus</li>
-                  <li class="task is-done"><span class="task-id">1.7</span>Memastikan kepatuhan lisensi dan atribusi source asal</li>
-                  <li class="task is-done"><span class="task-id">1.8</span>Menetapkan kebijakan menyerap perbaikan keamanan dari upstream</li>
+                  <li class="task is-done"><span class="task-id">1.1</span>Map the architecture and major source code components</li>
+                  <li class="task is-done"><span class="task-id">1.2</span>Identify components to retain, modify, or replace</li>
+                  <li class="task is-done"><span class="task-id">1.3</span>Review and document changes already made</li>
+                  <li class="task is-done"><span class="task-id">1.4</span>Establish a documented source build baseline</li>
+                  <li class="task is-done"><span class="task-id">1.5</span>Create a baseline and recovery procedure for failed changes</li>
+                  <li class="task is-done"><span class="task-id">1.6</span>Run the upstream test suite as a pre-consensus-change baseline</li>
+                  <li class="task"><span class="task-id">1.7</span>Complete the license compliance and source attribution audit</li>
+                  <li class="task is-done"><span class="task-id">1.8</span>Define a policy for integrating upstream security fixes</li>
                 </ul>
               </details>
-              <p class="criteria"><strong>Kriteria selesai:</strong> struktur source dipahami, perubahan terdokumentasi, baseline build dan test berhasil, serta batas fork dan kebijakan upstream jelas.</p>
+
+              <p class="criteria">
+                <strong>Completion criteria:</strong>
+                source structure, documented changes, build and test baseline,
+                licensing obligations, and upstream maintenance policy are reviewed.
+              </p>
             </div>
           </li>
 
-          <!-- FASE 2 -->
+          <!-- PHASE 2 -->
           <li class="step">
             <span class="step-num" aria-hidden="true">02</span>
             <div class="step-body">
               <div class="step-top">
-                <h3>Identitas &amp; Pemisahan Chain</h3>
-                <span class="status" data-status="completed"></span>
+                <h3>Chain Identity &amp; Network Separation</h3>
+                <span class="status" data-status="in-progress"></span>
               </div>
-              <p>Memastikan koin baru memiliki identitas sendiri dan tidak tercampur dengan jaringan VerusCoin.</p>
+
+              <p>Giving the new coin its own identity and preventing unintended interaction with the original network.</p>
+
               <details class="tasks">
-                <summary>Sub-tugas</summary>
+                <summary>Tasks</summary>
                 <ul>
-                  <li class="task is-done"><span class="task-id">2.1</span>Menetapkan nama koin, ticker, dan identitas chain</li>
-                  <li class="task is-done"><span class="task-id">2.2</span>Memeriksa prefix alamat dan format encoding</li>
-                  <li class="task is-done"><span class="task-id">2.3</span>Menetapkan magic bytes jaringan serta port P2P dan RPC</li>
-                  <li class="task is-done"><span class="task-id">2.4</span>Memeriksa coin type dan parameter wallet yang relevan</li>
-                  <li class="task is-done"><span class="task-id">2.5</span>Memisahkan direktori data, konfigurasi, dan wallet</li>
-                  <li class="task is-done"><span class="task-id">2.6</span>Mengaudit referensi identitas Verus yang masih tertanam</li>
-                  <li class="task is-done"><span class="task-id">2.7</span>Memastikan mode mainnet, testnet, dan regtest tidak saling bertabrakan</li>
+                  <li class="task is-done"><span class="task-id">2.1</span>Define the coin name, ticker, and chain identity</li>
+                  <li class="task is-done"><span class="task-id">2.2</span>Review address prefixes and encoding formats</li>
+                  <li class="task is-done"><span class="task-id">2.3</span>Define network magic bytes, P2P ports, and RPC ports</li>
+                  <li class="task is-done"><span class="task-id">2.4</span>Review coin type and relevant wallet parameters</li>
+                  <li class="task is-done"><span class="task-id">2.5</span>Separate data directories, configuration, and wallet storage</li>
+                  <li class="task is-done"><span class="task-id">2.6</span>Audit remaining embedded Verus identity references</li>
+                  <li class="task"><span class="task-id">2.7</span>Verify that mainnet, testnet, and regtest are fully isolated</li>
                 </ul>
               </details>
-              <p class="criteria"><strong>Kriteria selesai:</strong> identitas chain konsisten dan data koin baru terisolasi dari jaringan asal.</p>
+
+              <p class="criteria">
+                <strong>Completion criteria:</strong>
+                chain identity is consistent and all network modes are proven
+                to use the correct independent parameters and data.
+              </p>
             </div>
           </li>
 
-          <!-- FASE 3 -->
+          <!-- PHASE 3 -->
           <li class="step">
             <span class="step-num" aria-hidden="true">03</span>
             <div class="step-body">
               <div class="step-top">
-                <h3>Desain Konsensus &amp; Tokenomics</h3>
-                <span class="status" data-status="completed"></span>
+                <h3>Consensus Design &amp; Tokenomics</h3>
+                <span class="status" data-status="in-progress"></span>
               </div>
-              <p>Menetapkan aturan dasar yang menentukan validitas blok dan emisi koin.</p>
+
+              <p>Defining the rules that determine block validity and coin issuance.</p>
+
               <details class="tasks">
-                <summary>Sub-tugas</summary>
+                <summary>Tasks</summary>
                 <ul>
-                  <li class="task is-done"><span class="task-id">3.1</span>Menetapkan algoritma Proof of Work (PoW) dan mekanisme Proof of Stake (PoS) hybrid seperti VerusCoin, yang sudah teruji, tanpa kriptografi buatan sendiri</li>
-                  <li class="task is-done"><span class="task-id">3.2</span>Menentukan target waktu blok (target desain: 150 detik)</li>
-                  <li class="task is-done"><span class="task-id">3.3</span>Menentukan aturan penyesuaian difficulty yang tahan lonjakan dan penurunan hashrate</li>
-                  <li class="task is-done"><span class="task-id">3.4</span>Menentukan reward awal (target desain: 25 koin per blok)</li>
-                  <li class="task is-done"><span class="task-id">3.5</span>Menentukan interval halving (target desain: 840.960 blok)</li>
-                  <li class="task is-done"><span class="task-id">3.6</span>Menghitung jadwal emisi dan estimasi suplai maksimum</li>
-                  <li class="task is-done"><span class="task-id">3.7</span>Menentukan aturan pembulatan reward dan satuan terkecil koin</li>
-                  <li class="task is-done"><span class="task-id">3.8</span>Menentukan validasi coinbase, reward, dan batas suplai</li>
-                  <li class="task is-done"><span class="task-id">3.9</span>Memeriksa seluruh jalur kode yang menentukan reward dan suplai</li>
-                  <li class="task is-done"><span class="task-id">3.10</span>Menentukan model peluncuran: fair launch, premine, atau dev fund</li>
-                  <li class="task is-done"><span class="task-id">3.11</span>Menetapkan algoritma Proof of Work (PoW) dan mekanisme Proof of Stake (PoS) hybrid seperti VerusCoin, yang sudah teruji, tanpa kriptografi buatan sendiri</li>
-                  <li class="task is-done"><span class="task-id">3.12</span>Memutuskan fitur bawaan lain yang dipertahankan atau dibuang (privasi, identitas, dan sebagainya)</li>
+                  <li class="task is-done"><span class="task-id">3.1</span>Select a hybrid Proof-of-Work (PoW) and Proof-of-Stake (PoS) consensus design in which both mechanisms compete for block production</li>
+                  <li class="task is-done"><span class="task-id">3.2</span>Set the target block time (design target: 150 seconds)</li>
+                  <li class="task is-done"><span class="task-id">3.3</span>Define difficulty adjustment requirements for changing network hashrate</li>
+                  <li class="task is-done"><span class="task-id">3.4</span>Set the initial block reward (design target: 25 VSH)</li>
+                  <li class="task is-done"><span class="task-id">3.5</span>Set the halving interval (design target: 840,960 blocks)</li>
+                  <li class="task is-done"><span class="task-id">3.6</span>Calculate the planned emission schedule and estimated maximum supply</li>
+                  <li class="task is-done"><span class="task-id">3.7</span>Define reward rounding and the smallest coin unit</li>
+                  <li class="task is-done"><span class="task-id">3.8</span>Specify coinbase, reward, and supply validation requirements</li>
+                  <li class="task"><span class="task-id">3.9</span>Audit all code paths that determine rewards and supply</li>
+                  <li class="task is-done"><span class="task-id">3.10</span>Choose the launch model: fair launch, premine, or development fund</li>
+                  <li class="task"><span class="task-id">3.11</span>Verify the PoW/PoS block selection and reward rules in the implementation</li>
+                  <li class="task is-done"><span class="task-id">3.12</span>Decide which inherited features to retain or remove</li>
                 </ul>
               </details>
-              <p class="criteria"><strong>Kriteria selesai:</strong> aturan konsensus dan emisi tertulis jelas, saling konsisten, dan dapat diuji. Target suplai sekitar 42 juta koin masih berupa target desain sampai terbukti melalui perhitungan dan pengujian.</p>
+
+              <p class="criteria">
+                <strong>Completion criteria:</strong>
+                consensus and emission rules are documented, internally consistent,
+                implemented, and validated through tests. The estimated supply
+                remains a design calculation until confirmed by the implementation.
+              </p>
             </div>
           </li>
 
-          <!-- FASE 4 -->
+          <!-- PHASE 4 -->
           <li class="step">
             <span class="step-num" aria-hidden="true">04</span>
             <div class="step-body">
               <div class="step-top">
-                <h3>Genesis Block &amp; Parameter Jaringan</h3>
+                <h3>Genesis Block &amp; Network Parameters</h3>
                 <span class="status" data-status="in-progress"></span>
               </div>
-              <p>Membentuk titik awal blockchain yang sesuai dengan chain baru.</p>
+
+              <p>Establishing the blockchain starting point and its network-specific parameters.</p>
+
               <details class="tasks">
-                <summary>Sub-tugas</summary>
+                <summary>Tasks</summary>
                 <ul>
-                  <li class="task"><span class="task-id">4.1</span>Menentukan parameter genesis block</li>
-                  <li class="task"><span class="task-id">4.2</span>Membuat genesis block berdasarkan aturan konsensus koin baru</li>
-                  <li class="task"><span class="task-id">4.3</span>Memverifikasi genesis hash dan merkle root</li>
-                  <li class="task"><span class="task-id">4.4</span>Memeriksa parameter jaringan dan identitas chain</li>
-                  <li class="task"><span class="task-id">4.5</span>Memastikan port, magic bytes, dan direktori data sudah sesuai</li>
-                  <li class="task"><span class="task-id">4.6</span>Memastikan node tidak memakai genesis atau konfigurasi jaringan asal secara tidak sengaja</li>
+                  <li class="task is-done"><span class="task-id">4.1</span>Define the genesis block parameters</li>
+                  <li class="task is-done"><span class="task-id">4.2</span>Implement separate genesis block configurations for VSH networks</li>
+                  <li class="task"><span class="task-id">4.3</span>Verify genesis hashes and Merkle roots independently</li>
+                  <li class="task"><span class="task-id">4.4</span>Verify network parameters and chain identity across all modes</li>
+                  <li class="task"><span class="task-id">4.5</span>Verify ports, magic bytes, and data directories</li>
+                  <li class="task"><span class="task-id">4.6</span>Confirm nodes cannot accidentally use the original network genesis or configuration</li>
                 </ul>
               </details>
-              <p class="criteria"><strong>Kriteria selesai:</strong> genesis dan parameter jaringan konsisten dengan aturan konsensus yang ditetapkan.</p>
+
+              <p class="criteria">
+                <strong>Completion criteria:</strong>
+                genesis data and network parameters are independently verified
+                and consistent with the intended chain configuration.
+              </p>
             </div>
           </li>
 
-          <!-- FASE 5 -->
+          <!-- PHASE 5 -->
           <li class="step">
             <span class="step-num" aria-hidden="true">05</span>
             <div class="step-body">
               <div class="step-top">
-                <h3>Regtest &amp; Pengujian Konsensus</h3>
+                <h3>Regtest &amp; Consensus Testing</h3>
                 <span class="status" data-status="planned"></span>
               </div>
-              <p>Membuktikan aturan dasar bekerja secara lokal sebelum menjalankan testnet.</p>
+
+              <p>Proving that the core rules work locally before running a public testnet.</p>
+
               <details class="tasks">
-                <summary>Sub-tugas</summary>
+                <summary>Tasks</summary>
                 <ul>
-                  <li class="task"><span class="task-id">5.1</span>Menjalankan node dengan direktori data terpisah</li>
-                  <li class="task"><span class="task-id">5.2</span>Membuat blok secara lokal dan memeriksa tinggi blok</li>
-                  <li class="task"><span class="task-id">5.3</span>Menguji transaksi dan validasi blok</li>
-                  <li class="task"><span class="task-id">5.4</span>Menguji reward pada tinggi blok yang berbeda</li>
-                  <li class="task"><span class="task-id">5.5</span>Menguji perubahan reward tepat di batas halving</li>
-                  <li class="task"><span class="task-id">5.6</span>Menguji penolakan blok atau transaksi yang tidak valid</li>
-                  <li class="task"><span class="task-id">5.7</span>Menguji restart node dan pemuatan ulang blockchain</li>
-                  <li class="task"><span class="task-id">5.8</span>Memastikan regtest tidak mengubah data jaringan lain</li>
-                  <li class="task"><span class="task-id">5.9</span>Mensimulasikan reorganisasi chain dan percobaan double-spend</li>
-                  <li class="task"><span class="task-id">5.10</span>Melakukan fuzzing pada validasi blok dan transaksi</li>
+                  <li class="task"><span class="task-id">5.1</span>Run nodes with separate data directories</li>
+                  <li class="task"><span class="task-id">5.2</span>Generate local blocks and verify block height</li>
+                  <li class="task"><span class="task-id">5.3</span>Test transaction and block validation</li>
+                  <li class="task"><span class="task-id">5.4</span>Test rewards at different block heights</li>
+                  <li class="task"><span class="task-id">5.5</span>Test reward changes at halving boundaries</li>
+                  <li class="task"><span class="task-id">5.6</span>Test rejection of invalid blocks and transactions</li>
+                  <li class="task"><span class="task-id">5.7</span>Test node restarts and blockchain reloads</li>
+                  <li class="task"><span class="task-id">5.8</span>Verify regtest cannot modify data belonging to other networks</li>
+                  <li class="task"><span class="task-id">5.9</span>Simulate chain reorganizations and double-spend attempts</li>
+                  <li class="task"><span class="task-id">5.10</span>Fuzz block and transaction validation</li>
                 </ul>
               </details>
-              <p class="criteria"><strong>Kriteria selesai:</strong> pengujian otomatis dan manual menunjukkan aturan konsensus berjalan sesuai desain, termasuk saat diserang.</p>
+
+              <p class="criteria">
+                <strong>Completion criteria:</strong>
+                automated and manual tests demonstrate that consensus rules
+                behave as designed, including under adversarial scenarios.
+              </p>
             </div>
           </li>
 
-          <!-- FASE 6 -->
+          <!-- PHASE 6 -->
           <li class="step">
             <span class="step-num" aria-hidden="true">06</span>
             <div class="step-body">
               <div class="step-top">
-                <h3>Testnet Multi-Node</h3>
+                <h3>Multi-Node Testnet</h3>
                 <span class="status" data-status="planned"></span>
               </div>
-              <p>Membuktikan beberapa node dapat beroperasi sebagai satu jaringan.</p>
+
+              <p>Proving that multiple nodes can operate as one network.</p>
+
               <details class="tasks">
-                <summary>Sub-tugas</summary>
+                <summary>Tasks</summary>
                 <ul>
-                  <li class="task"><span class="task-id">6.1</span>Menjalankan minimal dua node pada lingkungan terpisah</li>
-                  <li class="task"><span class="task-id">6.2</span>Menguji koneksi dan propagasi blok antar-node</li>
-                  <li class="task"><span class="task-id">6.3</span>Menguji propagasi transaksi</li>
-                  <li class="task"><span class="task-id">6.4</span>Memastikan node menyepakati chain yang valid</li>
-                  <li class="task"><span class="task-id">6.5</span>Menguji pemulihan koneksi dan sinkronisasi ulang</li>
-                  <li class="task"><span class="task-id">6.6</span>Memeriksa konflik konfigurasi dan pemisahan jaringan</li>
-                  <li class="task"><span class="task-id">6.7</span>Mendokumentasikan hasil pengujian dan bug yang ditemukan</li>
-                  <li class="task"><span class="task-id">6.8</span>Menguji skenario fork dan reorganisasi antar-node</li>
+                  <li class="task"><span class="task-id">6.1</span>Run at least two nodes in separate environments</li>
+                  <li class="task"><span class="task-id">6.2</span>Test peer connections and block propagation</li>
+                  <li class="task"><span class="task-id">6.3</span>Test transaction propagation</li>
+                  <li class="task"><span class="task-id">6.4</span>Verify that nodes agree on the valid chain</li>
+                  <li class="task"><span class="task-id">6.5</span>Test connection recovery and resynchronization</li>
+                  <li class="task"><span class="task-id">6.6</span>Check configuration conflicts and network separation</li>
+                  <li class="task"><span class="task-id">6.7</span>Document test results and discovered bugs</li>
+                  <li class="task"><span class="task-id">6.8</span>Test fork and reorganization scenarios across nodes</li>
                 </ul>
               </details>
-              <p class="criteria"><strong>Kriteria selesai:</strong> beberapa node dapat terhubung, menyinkronkan chain, dan memvalidasi blok dengan aturan yang sama.</p>
+
+              <p class="criteria">
+                <strong>Completion criteria:</strong>
+                multiple nodes connect, synchronize the chain, and validate
+                blocks using the same consensus rules.
+              </p>
             </div>
           </li>
 
-          <!-- FASE 7 -->
+          <!-- PHASE 7 -->
           <li class="step">
             <span class="step-num" aria-hidden="true">07</span>
             <div class="step-body">
               <div class="step-top">
-                <h3>Audit &amp; Kesiapan Rilis</h3>
+                <h3>Security Audit &amp; Release Readiness</h3>
                 <span class="status" data-status="planned"></span>
               </div>
-              <p>Memastikan implementasi layak dipertimbangkan untuk rilis publik.</p>
+
+              <p>Assessing whether the implementation is ready for a potential public release.</p>
+
               <details class="tasks">
-                <summary>Sub-tugas</summary>
+                <summary>Tasks</summary>
                 <ul>
-                  <li class="task"><span class="task-id">7.1</span>Mengaudit validasi transaksi dan blok</li>
-                  <li class="task"><span class="task-id">7.2</span>Mengaudit reward, emisi, dan batas suplai</li>
-                  <li class="task"><span class="task-id">7.3</span>Memeriksa keamanan RPC dan konfigurasi node</li>
-                  <li class="task"><span class="task-id">7.4</span>Memeriksa wallet, backup, dan pemulihan data</li>
-                  <li class="task"><span class="task-id">7.5</span>Menyiapkan dokumentasi build dan instalasi node</li>
-                  <li class="task"><span class="task-id">7.6</span>Menyusun prosedur rilis dan pemantauan jaringan</li>
-                  <li class="task"><span class="task-id">7.7</span>Menyelesaikan bug kritis sebelum mempertimbangkan peluncuran</li>
-                  <li class="task"><span class="task-id">7.8</span>Meminta audit keamanan dari pihak ketiga yang independen</li>
-                  <li class="task"><span class="task-id">7.9</span>Membuka program pelaporan bug (bug bounty)</li>
-                  <li class="task"><span class="task-id">7.10</span>Menerbitkan rilis bertanda tangan, dengan checksum dan build yang dapat direproduksi</li>
-                  <li class="task"><span class="task-id">7.11</span>Berkonsultasi dengan ahli hukum mengenai regulasi koin publik</li>
+                  <li class="task"><span class="task-id">7.1</span>Audit transaction and block validation</li>
+                  <li class="task"><span class="task-id">7.2</span>Audit rewards, emission, and maximum supply</li>
+                  <li class="task"><span class="task-id">7.3</span>Review RPC security and node configuration</li>
+                  <li class="task"><span class="task-id">7.4</span>Review wallet security, backups, and data recovery</li>
+                  <li class="task"><span class="task-id">7.5</span>Prepare node build and installation documentation</li>
+                  <li class="task"><span class="task-id">7.6</span>Prepare release and network monitoring procedures</li>
+                  <li class="task"><span class="task-id">7.7</span>Resolve critical bugs before considering launch</li>
+                  <li class="task"><span class="task-id">7.8</span>Request an independent third-party security audit</li>
+                  <li class="task"><span class="task-id">7.9</span>Establish a security vulnerability reporting or bug bounty program</li>
+                  <li class="task"><span class="task-id">7.10</span>Publish signed releases, checksums, and reproducible build instructions</li>
+                  <li class="task"><span class="task-id">7.11</span>Seek legal guidance regarding public cryptocurrency regulations</li>
                 </ul>
               </details>
-              <p class="criteria"><strong>Kriteria selesai:</strong> tidak ada masalah kritis yang diketahui, hasil audit independen tersedia, pengujian terdokumentasi, dan prosedur operasional tersedia.</p>
+
+              <p class="criteria">
+                <strong>Completion criteria:</strong>
+                no known critical issues remain, independent audit results are
+                available, testing is documented, and operational procedures exist.
+              </p>
             </div>
           </li>
 
-          <!-- FASE 8 -->
+          <!-- PHASE 8 -->
           <li class="step">
             <span class="step-num" aria-hidden="true">08</span>
             <div class="step-body">
               <div class="step-top">
-                <h3>Ekosistem &amp; Komunitas</h3>
+                <h3>Ecosystem &amp; Community</h3>
                 <span class="status" data-status="planned"></span>
               </div>
-              <p>Menyiapkan perangkat pendukung agar jaringan dapat tumbuh dan digunakan orang lain.</p>
+
+              <p>Preparing the supporting infrastructure for a usable and growing network.</p>
+
               <details class="tasks">
-                <summary>Sub-tugas</summary>
+                <summary>Tasks</summary>
                 <ul>
-                  <li class="task"><span class="task-id">8.1</span>Menyiapkan seed node dan DNS seed</li>
-                  <li class="task"><span class="task-id">8.2</span>Membangun block explorer</li>
-                  <li class="task"><span class="task-id">8.3</span>Menyediakan wallet beserta panduan penggunaan</li>
-                  <li class="task"><span class="task-id">8.4</span>Menyiapkan software mining dan dukungan mining pool</li>
-                  <li class="task"><span class="task-id">8.5</span>Menerbitkan dokumentasi publik dan whitepaper</li>
-                  <li class="task"><span class="task-id">8.6</span>Membuka kanal komunitas dan prosedur pelaporan keamanan</li>
+                  <li class="task"><span class="task-id">8.1</span>Set up seed nodes and DNS seeds</li>
+                  <li class="task"><span class="task-id">8.2</span>Build a block explorer</li>
+                  <li class="task"><span class="task-id">8.3</span>Provide a wallet and user documentation</li>
+                  <li class="task"><span class="task-id">8.4</span>Prepare mining software and mining pool support</li>
+                  <li class="task"><span class="task-id">8.5</span>Publish public documentation and a technical whitepaper</li>
+                  <li class="task"><span class="task-id">8.6</span>Open community channels and security reporting procedures</li>
                 </ul>
               </details>
-              <p class="criteria"><strong>Kriteria selesai:</strong> pengguna dapat menjalankan node, menambang, dan mengirim transaksi tanpa bantuan langsung dari tim inti.</p>
+
+              <p class="criteria">
+                <strong>Completion criteria:</strong>
+                users can run nodes, participate in mining or staking,
+                and send transactions without direct assistance from the core team.
+              </p>
             </div>
           </li>
 
@@ -279,14 +511,20 @@
 
   </main>
 
-  <!-- ===== FOOTER ===== -->
+  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container footer-inner">
       <div>
         <p class="footer-brand">VerifHash · VSH</p>
-        <p class="footer-note">Open development · Built step by step</p>
+        <p class="footer-note">Independent development · Built step by step</p>
       </div>
-      <a class="footer-link" href="https://github.com/yun-nuonuo/verifhash" target="_blank" rel="noopener">GitHub</a>
+
+      <a
+        class="footer-link"
+        href="https://github.com/Yun-Nuonuo/VerifHash"
+        target="_blank"
+        rel="noopener noreferrer"
+      >GitHub Repository</a>
     </div>
   </footer>
 
