@@ -1,4 +1,10 @@
 
+/* =========================================
+   VERIFHASH (VSH)
+   Responsive Stylesheet
+   Mobile / Tablet / Laptop / Desktop
+========================================= */
+
 :root {
   --bg: #0B110F;
   --surface: #101916;
@@ -7,14 +13,26 @@
   --accent: #70E5A0;
   --text: #FFFFFF;
   --text-muted: #8FA79B;
+
   --radius: 14px;
   --radius-sm: 10px;
-  --maxw: 720px;
-  --header-h: 64px;
-  --font: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+
+  /* Responsive content width */
+  --maxw: 1200px;
+
+  --header-h: 68px;
+
+  --font: "Inter", ui-sans-serif, system-ui, -apple-system,
+          "Segoe UI", Roboto, Arial, sans-serif;
 }
 
-*, *::before, *::after {
+/* =========================================
+   RESET & BASE
+========================================= */
+
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -22,18 +40,25 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: calc(var(--header-h) + 16px);
   -webkit-text-size-adjust: 100%;
+  overflow-x: clip;
 }
 
 body {
   margin: 0;
+  min-width: 320px;
   background: var(--bg);
   color: var(--text);
   font-family: var(--font);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
 }
 
-h1, h2, h3, p, ol {
+h1,
+h2,
+h3,
+p,
+ol {
   margin: 0;
 }
 
@@ -47,6 +72,11 @@ a {
   text-decoration: none;
 }
 
+img,
+svg {
+  max-width: 100%;
+}
+
 :focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 3px;
@@ -54,11 +84,13 @@ a {
 }
 
 .container {
-  width: 100%;
-  max-width: var(--maxw);
-  margin: 0 auto;
-  padding: 0 20px;
+  width: min(100% - 40px, var(--maxw));
+  margin-inline: auto;
 }
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
 
 .skip-link {
   position: absolute;
@@ -76,24 +108,31 @@ a {
   top: 10px;
 }
 
-/* Header */
+/* =========================================
+   HEADER
+========================================= */
+
 .site-header {
   position: sticky;
   top: 0;
   z-index: 10;
   height: var(--header-h);
+
   background: rgba(11, 17, 15, 0.92);
   border-bottom: 1px solid var(--border);
+
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
 }
 
 .header-inner {
   height: 100%;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
+
+  gap: 20px;
 }
 
 .brand {
@@ -101,18 +140,19 @@ a {
   align-items: center;
   gap: 10px;
   min-width: 0;
+  flex-shrink: 0;
 }
 
 .brand-icon {
-  width: 26px;
-  height: 26px;
+  width: 27px;
+  height: 27px;
   color: var(--accent);
   flex: none;
 }
 
 .brand-name {
   font-weight: 650;
-  font-size: 1.05rem;
+  font-size: 1.08rem;
   letter-spacing: -0.01em;
 }
 
@@ -127,15 +167,22 @@ a {
 
 .nav {
   display: flex;
-  gap: 4px;
+  align-items: center;
+  gap: 5px;
 }
 
 .nav a {
-  padding: 8px 10px;
+  padding: 8px 13px;
   border-radius: 8px;
-  font-size: 0.86rem;
+
+  font-size: 0.9rem;
   color: var(--text-muted);
-  transition: color 0.2s, background 0.2s;
+
+  white-space: nowrap;
+
+  transition:
+    color 0.2s ease,
+    background 0.2s ease;
 }
 
 .nav a:hover {
@@ -147,14 +194,21 @@ a {
   background: var(--surface-2);
 }
 
-/* Hero */
+/* =========================================
+   HERO
+========================================= */
+
 .hero {
   min-height: calc(100vh - var(--header-h));
   min-height: calc(100svh - var(--header-h));
+
   display: flex;
   align-items: center;
+  justify-content: center;
+
   text-align: center;
-  padding: 72px 0;
+
+  padding: clamp(60px, 9vw, 120px) 0;
 }
 
 .hero-inner {
@@ -164,24 +218,29 @@ a {
 }
 
 .hero-icon {
-  width: 76px;
-  height: 76px;
+  width: clamp(60px, 7vw, 88px);
+  height: clamp(60px, 7vw, 88px);
+
   color: var(--accent);
-  margin-bottom: 24px;
+
+  margin-bottom: clamp(20px, 3vw, 30px);
 }
 
 .eyebrow {
   color: var(--accent);
-  font-size: 0.75rem;
+
+  font-size: clamp(0.68rem, 1vw, 0.8rem);
   font-weight: 700;
   letter-spacing: 0.14em;
+
   margin-bottom: 12px;
 }
 
 .hero h1 {
-  font-size: clamp(2.2rem, 7vw, 3.6rem);
+  font-size: clamp(2.2rem, 5.5vw, 4.8rem);
   font-weight: 700;
-  letter-spacing: -0.03em;
+
+  letter-spacing: -0.04em;
   line-height: 1.1;
 }
 
@@ -190,16 +249,20 @@ a {
 }
 
 .hero-desc {
-  margin-top: 18px;
-  max-width: 42ch;
-  font-size: clamp(1.02rem, 2.6vw, 1.2rem);
+  margin-top: 20px;
+
+  max-width: 620px;
+
+  font-size: clamp(1rem, 1.7vw, 1.3rem);
   color: var(--text-muted);
 }
 
 .hero-slogan {
   margin-top: 28px;
-  font-size: 1.05rem;
+
+  font-size: clamp(0.95rem, 1.5vw, 1.1rem);
   font-weight: 600;
+
   color: var(--accent);
   letter-spacing: 0.02em;
 }
@@ -208,32 +271,43 @@ a {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 8px;
-  margin-top: 24px;
+
+  gap: 9px;
+  margin-top: 25px;
 }
 
 .hero-tags span {
-  padding: 5px 10px;
+  padding: 6px 12px;
+
   border: 1px solid var(--border);
   border-radius: 999px;
+
   background: var(--surface);
+
   color: var(--text-muted);
-  font-size: 0.76rem;
+  font-size: 0.78rem;
 }
 
 .hero-cta {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  margin-top: 30px;
-  padding: 10px 17px;
+
+  margin-top: 32px;
+  padding: 11px 19px;
+
   border: 1px solid var(--accent);
   border-radius: 9px;
+
   color: var(--bg);
   background: var(--accent);
+
   font-size: 0.9rem;
   font-weight: 700;
-  transition: transform 0.2s, background 0.2s;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
 }
 
 .hero-cta:hover {
@@ -241,32 +315,41 @@ a {
   background: #8aefb2;
 }
 
-/* Shared section heading */
+/* =========================================
+   SECTION HEADINGS
+========================================= */
+
 .section-head {
   text-align: center;
-  margin-bottom: 36px;
+  margin-bottom: clamp(28px, 4vw, 46px);
 }
 
 .section-head h2 {
-  font-size: clamp(1.6rem, 4.5vw, 2.2rem);
+  font-size: clamp(1.55rem, 3vw, 2.3rem);
   font-weight: 700;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.025em;
 }
 
 .section-head p {
-  margin-top: 10px;
+  max-width: 650px;
+  margin: 10px auto 0;
+
   color: var(--text-muted);
-  font-size: 0.95rem;
+  font-size: clamp(0.88rem, 1.2vw, 1rem);
 }
 
-/* Project overview */
+/* =========================================
+   PROJECT OVERVIEW
+========================================= */
+
 .project-overview {
-  padding: 72px 0;
+  padding: clamp(60px, 7vw, 100px) 0;
   border-top: 1px solid var(--border);
 }
 
 .overview-card {
-  padding: 22px;
+  padding: clamp(18px, 3vw, 30px);
+
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -274,52 +357,75 @@ a {
 
 .overview-card p {
   color: var(--text-muted);
-  font-size: 0.95rem;
+  font-size: clamp(0.88rem, 1.15vw, 1rem);
 }
 
 .overview-card p + p {
-  margin-top: 14px;
+  margin-top: 15px;
 }
 
-/* Tokenomics */
+/* =========================================
+   TOKENOMICS
+========================================= */
+
 .tokenomics {
-  padding: 72px 0;
+  padding: clamp(60px, 7vw, 100px) 0;
   border-top: 1px solid var(--border);
 }
 
 .token-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: clamp(10px, 1.5vw, 20px);
 }
 
 .token-card {
   min-width: 0;
-  padding: 17px;
+
+  padding: clamp(15px, 2vw, 25px);
+
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
+
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.token-card:hover {
+  border-color: rgba(112, 229, 160, 0.45);
+  transform: translateY(-2px);
 }
 
 .token-label {
   display: block;
+
   color: var(--text-muted);
-  font-size: 0.8rem;
+  font-size: clamp(0.76rem, 1vw, 0.86rem);
 }
 
 .token-card strong {
   display: block;
-  margin-top: 7px;
-  font-size: clamp(1.35rem, 4vw, 1.8rem);
+
+  margin-top: 8px;
+
+  font-size: clamp(1.3rem, 2.5vw, 2rem);
   line-height: 1.25;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.035em;
+
   overflow-wrap: anywhere;
 }
 
 .token-card strong span {
   color: var(--accent);
+
   font-size: 0.75rem;
   font-weight: 600;
+
   letter-spacing: 0;
 }
 
@@ -329,15 +435,23 @@ a {
 
 .token-card small {
   display: block;
-  margin-top: 10px;
+
+  margin-top: 12px;
+
   color: var(--text-muted);
-  font-size: 0.8rem;
-  line-height: 1.5;
+  font-size: 0.82rem;
+  line-height: 1.6;
 }
 
+/* =========================================
+   CONSENSUS CARD
+========================================= */
+
 .consensus-card {
-  margin-top: 16px;
-  padding: 20px;
+  margin-top: 18px;
+
+  padding: clamp(18px, 2.5vw, 28px);
+
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -346,41 +460,50 @@ a {
 .consensus-heading {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
 }
 
 .consensus-icon {
   display: grid;
   place-items: center;
-  width: 34px;
-  height: 34px;
+
+  width: 38px;
+  height: 38px;
+
   flex: none;
+
   border-radius: 9px;
+
   background: var(--surface-2);
   color: var(--accent);
-  font-size: 1.15rem;
+
+  font-size: 1.2rem;
 }
 
 .consensus-heading h3 {
-  font-size: 1.05rem;
+  font-size: clamp(1rem, 1.5vw, 1.15rem);
   font-weight: 650;
 }
 
 .consensus-card > p {
-  margin-top: 13px;
+  margin-top: 15px;
+
   color: var(--text-muted);
-  font-size: 0.9rem;
+  font-size: 0.93rem;
 }
 
 .consensus-types {
   display: grid;
+
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 10px;
-  margin-top: 18px;
+
+  gap: 12px;
+  margin-top: 20px;
 }
 
 .consensus-types div {
-  padding: 12px;
+  padding: 15px;
+
   background: var(--surface-2);
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
@@ -393,30 +516,37 @@ a {
 
 .consensus-types strong {
   color: var(--accent);
-  font-size: 0.88rem;
+  font-size: 0.9rem;
 }
 
 .consensus-types span {
-  margin-top: 4px;
+  margin-top: 5px;
+
   color: var(--text-muted);
-  font-size: 0.76rem;
+  font-size: 0.8rem;
 }
 
 .disclaimer {
-  margin-top: 14px;
+  margin-top: 15px;
+
   color: var(--text-muted);
-  font-size: 0.78rem;
+  font-size: 0.8rem;
+
   text-align: center;
 }
 
-/* Development status */
+/* =========================================
+   DEVELOPMENT STATUS
+========================================= */
+
 .development-status {
-  padding: 72px 0;
+  padding: clamp(60px, 7vw, 100px) 0;
   border-top: 1px solid var(--border);
 }
 
 .status-card {
-  padding: 20px;
+  padding: clamp(18px, 2.5vw, 28px);
+
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -425,36 +555,44 @@ a {
 .status-card-top {
   display: flex;
   flex-wrap: wrap;
+
   align-items: center;
   justify-content: space-between;
+
   gap: 12px;
 }
 
 .status-kicker {
   color: var(--accent);
+
   font-size: 0.72rem;
   font-weight: 700;
+
   letter-spacing: 0.1em;
 }
 
 .status-card h3 {
-  margin-top: 4px;
-  font-size: 1.08rem;
+  margin-top: 5px;
+
+  font-size: clamp(1rem, 1.6vw, 1.2rem);
 }
 
 .status-card > p {
-  margin-top: 13px;
+  margin-top: 14px;
+
   color: var(--text-muted);
-  font-size: 0.9rem;
+  font-size: 0.93rem;
 }
 
 .evidence-list {
   display: grid;
-  gap: 7px;
-  margin: 15px 0 0;
-  padding-left: 20px;
+  gap: 8px;
+
+  margin: 16px 0 0;
+  padding-left: 22px;
+
   color: var(--text);
-  font-size: 0.87rem;
+  font-size: 0.88rem;
 }
 
 .evidence-list li::marker {
@@ -462,103 +600,135 @@ a {
 }
 
 .status-card .status-caution {
-  margin-top: 16px;
-  padding-top: 13px;
+  margin-top: 17px;
+  padding-top: 14px;
+
   border-top: 1px dashed var(--border);
-  font-size: 0.82rem;
+
+  font-size: 0.84rem;
 }
 
-/* Roadmap */
+/* =========================================
+   ROADMAP
+========================================= */
+
 .roadmap {
-  padding: 72px 0 96px;
+  padding: clamp(60px, 7vw, 100px) 0 110px;
   border-top: 1px solid var(--border);
 }
 
 .steps {
   position: relative;
+
   display: grid;
-  gap: 16px;
+  gap: clamp(14px, 1.8vw, 22px);
 }
 
 .steps::before {
   content: "";
+
   position: absolute;
+
   left: 25px;
   top: 26px;
   bottom: 26px;
+
   width: 2px;
+
   background: var(--border);
 }
 
 .step {
   position: relative;
+
   display: flex;
-  gap: 16px;
   align-items: flex-start;
+
+  gap: clamp(12px, 1.5vw, 20px);
 }
 
 .step-num {
   flex: none;
+
   width: 52px;
   height: 52px;
+
   display: grid;
   place-items: center;
+
   background: var(--surface-2);
   color: var(--accent);
+
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
+
   font-weight: 700;
   font-size: 0.95rem;
+
   font-variant-numeric: tabular-nums;
 }
 
 .step-body {
   flex: 1;
   min-width: 0;
+
+  padding: clamp(17px, 2.5vw, 28px);
+
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 18px 20px;
 }
 
 .step-top {
   display: flex;
   flex-wrap: wrap;
+
   align-items: center;
   justify-content: space-between;
+
   gap: 8px 12px;
 }
 
 .step h3 {
-  font-size: 1.1rem;
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
   font-weight: 650;
   letter-spacing: -0.01em;
 }
 
 .step-body p {
-  margin-top: 8px;
+  margin-top: 9px;
+
   color: var(--text-muted);
-  font-size: 0.95rem;
+  font-size: clamp(0.86rem, 1.1vw, 0.96rem);
 }
 
-/* Status labels */
+/* =========================================
+   ROADMAP STATUS LABELS
+========================================= */
+
 .status {
   display: inline-flex;
   align-items: center;
   gap: 6px;
+
   font-size: 0.78rem;
   font-weight: 600;
+
   padding: 3px 10px;
+
   border-radius: 999px;
   border: 1px solid var(--border);
+
   color: var(--text-muted);
   white-space: nowrap;
 }
 
 .status::before {
   content: "";
+
   width: 6px;
   height: 6px;
+
   border-radius: 50%;
   background: currentColor;
 }
@@ -586,11 +756,16 @@ a {
   border-color: var(--accent);
 }
 
-/* Roadmap criteria */
+/* =========================================
+   ROADMAP CRITERIA
+========================================= */
+
 .step-body p.criteria {
-  margin-top: 14px;
-  padding-top: 12px;
+  margin-top: 15px;
+  padding-top: 13px;
+
   border-top: 1px dashed var(--border);
+
   font-size: 0.88rem;
 }
 
@@ -599,16 +774,22 @@ a {
   font-weight: 600;
 }
 
-/* Roadmap tasks */
+/* =========================================
+   ROADMAP TASKS
+========================================= */
+
 .tasks {
-  margin-top: 14px;
+  margin-top: 15px;
 }
 
 .tasks summary {
   cursor: pointer;
-  font-size: 0.85rem;
+
+  font-size: 0.86rem;
   font-weight: 600;
+
   color: var(--accent);
+
   list-style: none;
   user-select: none;
 }
@@ -627,26 +808,34 @@ a {
 
 .tasks ul {
   list-style: none;
-  margin: 10px 0 0;
+
+  margin: 12px 0 0;
   padding: 0;
+
   display: grid;
-  gap: 8px;
+  gap: 9px;
 }
 
 .task {
   position: relative;
+
   padding-left: 26px;
-  font-size: 0.9rem;
+
+  font-size: clamp(0.82rem, 1vw, 0.93rem);
   color: var(--text-muted);
 }
 
 .task::before {
   content: "";
+
   position: absolute;
+
   left: 0;
   top: 5px;
+
   width: 14px;
   height: 14px;
+
   border: 1.5px solid var(--border);
   border-radius: 4px;
 }
@@ -662,34 +851,46 @@ a {
 
 .task.is-done::after {
   content: "✓";
+
   position: absolute;
+
   left: 2.5px;
   top: 2px;
+
   font-size: 0.7rem;
   font-weight: 800;
+
   color: var(--bg);
 }
 
 .task-id {
   display: inline-block;
+
   min-width: 2.2em;
   margin-right: 6px;
+
   font-weight: 600;
   font-variant-numeric: tabular-nums;
+
   color: var(--accent);
 }
 
-/* Footer */
+/* =========================================
+   FOOTER
+========================================= */
+
 .site-footer {
   border-top: 1px solid var(--border);
-  padding: 32px 0;
+  padding: 35px 0;
 }
 
 .footer-inner {
   display: flex;
   flex-wrap: wrap;
+
   align-items: center;
   justify-content: space-between;
+
   gap: 16px;
 }
 
@@ -698,7 +899,8 @@ a {
 }
 
 .footer-note {
-  margin-top: 2px;
+  margin-top: 3px;
+
   font-size: 0.88rem;
   color: var(--text-muted);
 }
@@ -713,14 +915,47 @@ a.footer-link:hover {
   text-underline-offset: 4px;
 }
 
-/* Small screens */
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+  :root {
+    --header-h: 62px;
+  }
+
+  .container {
+    width: min(100% - 36px, var(--maxw));
+  }
+
+  .token-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .token-card-wide {
+    grid-column: 1 / -1;
+  }
+
+  .hero {
+    padding: 75px 0;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
 @media (max-width: 600px) {
   :root {
     --header-h: 58px;
   }
 
   .container {
-    padding: 0 16px;
+    width: calc(100% - 32px);
+  }
+
+  .header-inner {
+    gap: 8px;
   }
 
   .brand {
@@ -728,7 +963,7 @@ a.footer-link:hover {
   }
 
   .brand-name {
-    font-size: 0.95rem;
+    font-size: 0.94rem;
   }
 
   .brand-icon {
@@ -746,12 +981,12 @@ a.footer-link:hover {
   }
 
   .nav a {
-    padding: 8px 7px;
+    padding: 7px 7px;
     font-size: 0.76rem;
   }
 
   .hero {
-    padding: 64px 0;
+    padding: 65px 0;
   }
 
   .hero-icon {
@@ -759,19 +994,29 @@ a.footer-link:hover {
     height: 66px;
   }
 
+  .hero-desc {
+    max-width: 38ch;
+  }
+
+  .hero-tags {
+    gap: 7px;
+  }
+
+  .hero-tags span {
+    font-size: 0.72rem;
+    padding: 5px 9px;
+  }
+
   .project-overview,
   .tokenomics,
   .development-status,
   .roadmap {
-    padding-top: 60px;
-    padding-bottom: 64px;
-  }
-
-  .section-head {
-    margin-bottom: 28px;
+    padding-top: 58px;
+    padding-bottom: 65px;
   }
 
   .token-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 9px;
   }
 
@@ -780,7 +1025,7 @@ a.footer-link:hover {
   }
 
   .token-card strong {
-    font-size: 1.35rem;
+    font-size: clamp(1.15rem, 5vw, 1.45rem);
   }
 
   .consensus-card,
@@ -789,34 +1034,46 @@ a.footer-link:hover {
     padding: 16px;
   }
 
+  .consensus-types {
+    gap: 9px;
+  }
+
+  .consensus-types div {
+    padding: 11px;
+  }
+
+  .steps {
+    gap: 14px;
+  }
+
   .step {
-    gap: 12px;
+    gap: 11px;
   }
 
   .step-num {
-    width: 44px;
-    height: 44px;
-    font-size: 0.85rem;
+    width: 42px;
+    height: 42px;
+    font-size: 0.82rem;
   }
 
   .steps::before {
-    left: 21px;
+    left: 20px;
   }
 
   .step-body {
-    padding: 16px;
+    padding: 15px;
   }
 
   .step h3 {
-    font-size: 1rem;
+    font-size: 0.98rem;
   }
 
   .step-body p {
-    font-size: 0.88rem;
+    font-size: 0.85rem;
   }
 
   .task {
-    font-size: 0.84rem;
+    font-size: 0.82rem;
   }
 
   .footer-inner {
@@ -825,9 +1082,17 @@ a.footer-link:hover {
   }
 }
 
-@media (max-width: 360px) {
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 380px) {
+  .container {
+    width: calc(100% - 26px);
+  }
+
   .brand-name {
-    font-size: 0.88rem;
+    font-size: 0.85rem;
   }
 
   .brand-ticker {
@@ -836,15 +1101,79 @@ a.footer-link:hover {
 
   .nav a {
     padding: 7px 5px;
-    font-size: 0.72rem;
+    font-size: 0.7rem;
+  }
+
+  .token-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .token-card-wide {
+    grid-column: auto;
   }
 
   .consensus-types {
     grid-template-columns: 1fr;
   }
+
+  .step {
+    gap: 8px;
+  }
+
+  .step-num {
+    width: 36px;
+    height: 36px;
+    font-size: 0.75rem;
+  }
+
+  .steps::before {
+    left: 17px;
+  }
+
+  .step-body {
+    padding: 13px;
+  }
 }
 
-/* Reduced motion accessibility */
+/* =========================================
+   LARGE DESKTOP / ULTRAWIDE
+========================================= */
+
+@media (min-width: 1400px) {
+  :root {
+    --maxw: 1280px;
+  }
+
+  .hero {
+    min-height: 820px;
+  }
+
+  .hero h1 {
+    font-size: 5rem;
+  }
+
+  .hero-desc {
+    font-size: 1.35rem;
+    max-width: 680px;
+  }
+
+  .section-head h2 {
+    font-size: 2.5rem;
+  }
+
+  .step-body {
+    padding: 30px 34px;
+  }
+
+  .token-card {
+    padding: 28px;
+  }
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
